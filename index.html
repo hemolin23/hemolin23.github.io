@@ -2,16 +2,1291 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="color-scheme" content="dark light" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>石根洁｜AIGC作品集</title>
-    <script type="module" crossorigin src="./assets/index-BRmHgRTI.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bn7ar8Rv.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="石根洁 AIGC 影像导演、内容增长与 AI 视频工业化作品集。"
+    />
+    <title>石根洁 | AI 影像导演作品集</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080807;
+        --bg-soft: #12110f;
+        --ink: #f8f6ef;
+        --muted: #aaa49a;
+        --muted-strong: #d7d1c5;
+        --line: rgba(248, 246, 239, 0.16);
+        --line-strong: rgba(248, 246, 239, 0.28);
+        --panel: rgba(248, 246, 239, 0.07);
+        --panel-strong: rgba(248, 246, 239, 0.11);
+        --accent: #ff4b2f;
+        --acid: #c8ff4e;
+        --cyan: #6ee7ee;
+        --gold: #f0bd65;
+        --max: 1200px;
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(90deg, rgba(248, 246, 239, 0.04) 1px, transparent 1px) 0 0 / 64px 64px,
+          linear-gradient(0deg, rgba(248, 246, 239, 0.026) 1px, transparent 1px) 0 0 / 64px 64px,
+          var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      video {
+        display: block;
+        max-width: 100%;
+      }
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        border-bottom: 1px solid var(--line);
+        background: rgba(8, 8, 7, 0.76);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        width: min(var(--max), calc(100% - 32px));
+        min-height: 64px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        white-space: nowrap;
+      }
+
+      .brand strong {
+        font-size: 1rem;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .links a:hover {
+        color: var(--ink);
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 16px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(8, 8, 7, 0.48);
+        color: var(--ink);
+        font-weight: 740;
+        transition:
+          transform 160ms ease,
+          background 160ms ease,
+          border-color 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        border-color: var(--line-strong);
+        background: var(--panel);
+      }
+
+      .button.primary {
+        border-color: transparent;
+        background: var(--acid);
+        color: #11110b;
+      }
+
+      .hero {
+        position: relative;
+        min-height: calc(100svh - 64px);
+        overflow: hidden;
+        display: grid;
+        align-items: end;
+        border-bottom: 1px solid var(--line);
+        isolation: isolate;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+      }
+
+      .hero-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.64;
+        filter: saturate(1.06) contrast(1.1);
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(8, 8, 7, 0.92), rgba(8, 8, 7, 0.62) 42%, rgba(8, 8, 7, 0.18)),
+          linear-gradient(0deg, var(--bg) 0%, transparent 34%);
+      }
+
+      .hero::after {
+        opacity: 0.28;
+        background:
+          linear-gradient(90deg, rgba(255, 75, 47, 0.3) 1px, transparent 1px) 0 0 / 8px 100%,
+          linear-gradient(0deg, rgba(248, 246, 239, 0.22) 1px, transparent 1px) 0 0 / 100% 8px;
+        mix-blend-mode: screen;
+      }
+
+      .hero-inner {
+        width: min(var(--max), calc(100% - 32px));
+        margin: 0 auto;
+        padding: 82px 0 70px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .kicker::before {
+        content: "";
+        width: 32px;
+        height: 2px;
+        background: currentColor;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-top: 18px;
+        font-size: 9rem;
+        line-height: 0.9;
+        font-weight: 900;
+      }
+
+      .hero-title-en {
+        max-width: 900px;
+        margin-top: 18px;
+        color: var(--muted-strong);
+        font-size: 1.2rem;
+        font-weight: 780;
+        text-transform: uppercase;
+      }
+
+      .hero-copy {
+        max-width: 710px;
+        margin-top: 28px;
+        color: var(--ink);
+        font-size: 1.28rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .hero-proof {
+        width: min(var(--max), calc(100% - 32px));
+        margin: -36px auto 0;
+        position: relative;
+        z-index: 5;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(8, 8, 7, 0.84);
+        backdrop-filter: blur(16px);
+        overflow: hidden;
+      }
+
+      .proof-stat {
+        min-height: 116px;
+        padding: 22px;
+        border-right: 1px solid var(--line);
+      }
+
+      .proof-stat:last-child {
+        border-right: 0;
+      }
+
+      .proof-stat strong {
+        display: block;
+        color: var(--acid);
+        font-size: 2.3rem;
+        line-height: 1;
+      }
+
+      .proof-stat span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      section {
+        width: min(var(--max), calc(100% - 32px));
+        margin: 0 auto;
+        padding: 112px 0;
+      }
+
+      [id] {
+        scroll-margin-top: 84px;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.68fr);
+        gap: 48px;
+        align-items: end;
+        margin-bottom: 40px;
+      }
+
+      .section-head h2 {
+        margin-top: 14px;
+        font-size: 3.5rem;
+        line-height: 1;
+        font-weight: 880;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .identity-band {
+        width: 100%;
+        margin-top: 80px;
+        padding: 78px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(90deg, rgba(255, 75, 47, 0.16), transparent 44%),
+          var(--bg-soft);
+      }
+
+      .identity-inner {
+        width: min(var(--max), calc(100% - 32px));
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.08fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .statement {
+        color: var(--ink);
+        font-size: 2.7rem;
+        line-height: 1.12;
+        font-weight: 840;
+      }
+
+      .statement span {
+        color: var(--accent);
+      }
+
+      .roles {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .role {
+        min-height: 204px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        background: rgba(248, 246, 239, 0.05);
+      }
+
+      .role small {
+        color: var(--gold);
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .role h3 {
+        margin-top: 26px;
+        font-size: 1.35rem;
+        line-height: 1.2;
+      }
+
+      .role p {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .proof-cell {
+        min-height: 236px;
+        padding: 24px;
+        background: #0c0c0a;
+      }
+
+      .proof-cell b {
+        color: var(--cyan);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+      }
+
+      .proof-cell h3 {
+        margin-top: 28px;
+        font-size: 1.55rem;
+        line-height: 1.16;
+      }
+
+      .proof-cell p {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .cinema-list {
+        display: grid;
+        gap: 22px;
+      }
+
+      .feature-work {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(330px, 0.72fr);
+        min-height: 480px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: #0b0b09;
+      }
+
+      .feature-media {
+        position: relative;
+        min-height: 480px;
+        background: #050505;
+      }
+
+      .feature-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .feature-info {
+        padding: 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .work-index {
+        color: var(--accent);
+        font-size: 0.84rem;
+        font-weight: 860;
+        text-transform: uppercase;
+      }
+
+      .feature-info h3 {
+        margin-top: 18px;
+        font-size: 2.2rem;
+        line-height: 1.05;
+      }
+
+      .feature-info p {
+        margin-top: 20px;
+        color: var(--muted-strong);
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .tag {
+        display: inline-flex;
+        min-height: 30px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0 10px;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+
+      .tag.hot {
+        border-color: rgba(200, 255, 78, 0.45);
+        color: var(--acid);
+      }
+
+      .work-meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .work-meta strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .work-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .work-tile {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: rgba(248, 246, 239, 0.05);
+      }
+
+      .work-tile video {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        background: #030303;
+      }
+
+      .work-tile.portrait video {
+        aspect-ratio: 9 / 14;
+      }
+
+      .work-tile-body {
+        min-height: 172px;
+        padding: 18px;
+      }
+
+      .work-tile h4 {
+        font-size: 1.05rem;
+        line-height: 1.26;
+      }
+
+      .work-tile p {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .case-band {
+        width: 100%;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: #0d0c0b;
+      }
+
+      .case-band section {
+        padding: 106px 0;
+      }
+
+      .case-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .case {
+        min-height: 420px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+        background:
+          linear-gradient(180deg, rgba(255, 75, 47, 0.1), transparent 48%),
+          rgba(248, 246, 239, 0.04);
+      }
+
+      .case .meta {
+        color: var(--gold);
+        font-size: 0.86rem;
+        font-weight: 780;
+      }
+
+      .case h3 {
+        margin-top: 24px;
+        font-size: 2rem;
+        line-height: 1.08;
+      }
+
+      .case p {
+        margin-top: 18px;
+        color: var(--muted-strong);
+      }
+
+      .case ul,
+      .timeline {
+        margin: 26px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .case li {
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .case li strong {
+        color: var(--ink);
+      }
+
+      .method-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+        gap: 20px;
+      }
+
+      .method-aside {
+        min-height: 360px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px;
+        background:
+          linear-gradient(180deg, rgba(110, 231, 238, 0.12), transparent 52%),
+          rgba(248, 246, 239, 0.04);
+      }
+
+      .method-aside h3 {
+        font-size: 2rem;
+        line-height: 1.08;
+      }
+
+      .method-aside p {
+        margin-top: 18px;
+        color: var(--muted);
+      }
+
+      .method-steps {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .step {
+        min-height: 172px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        background: rgba(248, 246, 239, 0.05);
+      }
+
+      .step span {
+        color: var(--accent);
+        font-weight: 860;
+      }
+
+      .step h4 {
+        margin-top: 16px;
+        font-size: 1.2rem;
+      }
+
+      .step p {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .resume-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .resume-block {
+        border-top: 1px solid var(--line-strong);
+        padding-top: 22px;
+      }
+
+      .resume-block h3 {
+        color: var(--accent);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 18px;
+      }
+
+      .timeline li {
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .timeline strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .timeline span {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .contact {
+        width: 100%;
+        padding: 0;
+        border-top: 1px solid var(--line);
+        background:
+          linear-gradient(90deg, rgba(200, 255, 78, 0.12), transparent 42%),
+          #090908;
+      }
+
+      .contact-inner {
+        width: min(var(--max), calc(100% - 32px));
+        min-height: 420px;
+        margin: 0 auto;
+        padding: 78px 0;
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.46fr);
+        gap: 56px;
+        align-items: center;
+      }
+
+      .contact h2 {
+        margin-top: 16px;
+        font-size: 4.8rem;
+        line-height: 0.96;
+      }
+
+      .contact p {
+        max-width: 660px;
+        margin-top: 26px;
+        color: var(--muted-strong);
+        font-size: 1.08rem;
+      }
+
+      .contact-panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .contact-panel a {
+        display: flex;
+        min-height: 64px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 0 20px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        font-weight: 750;
+      }
+
+      .contact-panel a:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-panel a::after {
+        content: ">";
+        color: var(--accent);
+      }
+
+      @media (max-width: 1020px) {
+        h1 {
+          font-size: 6.2rem;
+        }
+
+        .section-head,
+        .identity-inner,
+        .feature-work,
+        .method-grid,
+        .contact-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .roles,
+        .proof-grid,
+        .work-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero-proof {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .proof-stat:nth-child(2) {
+          border-right: 0;
+        }
+
+        .proof-stat:nth-child(1),
+        .proof-stat:nth-child(2) {
+          border-bottom: 1px solid var(--line);
+        }
+
+        .feature-media {
+          min-height: 420px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav {
+          min-height: 58px;
+        }
+
+        .brand span,
+        .links,
+        .nav > .button {
+          display: none;
+        }
+
+        .hero {
+          min-height: 760px;
+        }
+
+        .hero-inner {
+          padding: 82px 0 82px;
+        }
+
+        h1 {
+          font-size: 4.6rem;
+        }
+
+        .hero-title-en {
+          font-size: 0.94rem;
+        }
+
+        .hero-copy {
+          font-size: 1.05rem;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .hero-proof {
+          margin-top: 0;
+          width: 100%;
+          border-left: 0;
+          border-right: 0;
+          border-radius: 0;
+        }
+
+        .proof-stat {
+          min-height: 104px;
+          padding: 18px 16px;
+        }
+
+        .proof-stat strong {
+          font-size: 1.9rem;
+        }
+
+        section {
+          padding: 78px 0;
+        }
+
+        .identity-band {
+          margin-top: 58px;
+          padding: 62px 0;
+        }
+
+        .statement {
+          font-size: 2.1rem;
+        }
+
+        .section-head {
+          gap: 20px;
+          margin-bottom: 28px;
+        }
+
+        .section-head h2 {
+          font-size: 2.3rem;
+        }
+
+        .roles,
+        .proof-grid,
+        .work-strip,
+        .case-grid,
+        .method-steps,
+        .resume-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .role {
+          min-height: 176px;
+        }
+
+        .proof-cell {
+          min-height: 190px;
+        }
+
+        .feature-media {
+          min-height: 360px;
+        }
+
+        .feature-info {
+          padding: 24px;
+        }
+
+        .feature-info h3,
+        .case h3,
+        .method-aside h3 {
+          font-size: 1.65rem;
+        }
+
+        .work-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-inner {
+          min-height: 0;
+          padding: 72px 0;
+        }
+
+        .contact h2 {
+          font-size: 2.65rem;
+          line-height: 1.08;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="#top">
+          <strong>石根洁</strong>
+          <span>AI Video Director</span>
+        </a>
+        <div class="links">
+          <a href="#proof">证据</a>
+          <a href="#work">作品</a>
+          <a href="#cases">案例</a>
+          <a href="#method">方法</a>
+          <a href="#resume">履历</a>
+        </div>
+        <a class="button" href="assets/portfolio/shigenjie-resume.docx" download>下载简历</a>
+      </nav>
+    </header>
+
+    <div id="top" class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline poster="assets/portfolio/flova-poster.jpg">
+          <source src="assets/portfolio/flova-preview.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero-inner">
+        <div class="kicker">AIGC Portfolio 2026</div>
+        <h1>石根洁</h1>
+        <p class="hero-title-en">AI 影像导演 / AIGC 内容制作人 / 内容增长系统搭建者</p>
+        <p class="hero-copy">
+          我把 AI 影像、短视频选题、脚本结构和内容增长流程串成可复制的生产系统。既能做能看的片子，也能把内容团队从灵感驱动推进到流程驱动。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">看代表作</a>
+          <a class="button" href="#cases">看项目能力</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-proof" aria-label="关键成果">
+      <div class="proof-stat"><strong>40%+</strong><span>文旅短视频爆款率</span></div>
+      <div class="proof-stat"><strong>50+</strong><span>周均脚本与文案产出</span></div>
+      <div class="proof-stat"><strong>3-8x</strong><span>AIGC 流程效率提升</span></div>
+      <div class="proof-stat"><strong>2W+</strong><span>单账号月均涨粉验证</span></div>
+    </aside>
+
+    <main>
+      <div class="identity-band">
+        <div class="identity-inner">
+          <p class="statement">
+            我不只做漂亮画面，而是把 <span>内容、技术和增长</span> 放进同一条生产线。
+          </p>
+          <div class="roles" aria-label="核心定位">
+            <article class="role">
+              <small>01 / Direction</small>
+              <h3>AI 影像导演</h3>
+              <p>从概念、分镜、首尾帧到剪辑包装，把 AI 视觉从单张图推进到完整叙事。</p>
+            </article>
+            <article class="role">
+              <small>02 / Content</small>
+              <h3>短视频内容制作人</h3>
+              <p>擅长把观点、财经、文旅与知识内容改造成适合平台传播的脚本结构。</p>
+            </article>
+            <article class="role">
+              <small>03 / System</small>
+              <h3>AI 内容产线搭建者</h3>
+              <p>用提示词库、智能体和 SOP 把创意流程沉淀成团队可复用的工作方式。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <section id="proof">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Proof Before Showreel</div>
+            <h2>先给信任，再给作品。</h2>
+          </div>
+          <p>
+            合作方最先需要确认三个问题：我是谁，我做成过什么，我的能力能不能迁移到新的项目里。下面是目前最有说服力的证据。
+          </p>
+        </div>
+        <div class="proof-grid">
+          <article class="proof-cell">
+            <b>Content Judgement</b>
+            <h3>爆款判断与脚本结构</h3>
+            <p>文旅账号阶段参与选题、脚本、拍摄和复盘，沉淀可复用的开头、反差和信息密度结构。</p>
+          </article>
+          <article class="proof-cell">
+            <b>AI Pipeline</b>
+            <h3>影像生产流程化</h3>
+            <p>用 ComfyUI、即梦、Runway、Midjourney 等工具完成图像、视频、首尾帧和包装实验。</p>
+          </article>
+          <article class="proof-cell">
+            <b>Creator Operation</b>
+            <h3>创作者生态运营</h3>
+            <p>AI 短剧创作者运营中负责提示词结构、项目品控和创作者协作流程。</p>
+          </article>
+          <article class="proof-cell">
+            <b>Agent Workflow</b>
+            <h3>内容智能体搭建</h3>
+            <p>在财经数字人项目中推进选题、脚本、广告文案和成片流程的智能体化。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Selected Films</div>
+            <h2>代表作品。</h2>
+          </div>
+          <p>
+            这组作品覆盖知识短视频、财经观点、AI 叙事短片、片头包装和图生视频，展示从内容判断到影像落地的完整能力。
+          </p>
+        </div>
+
+        <div class="cinema-list">
+          <article class="feature-work">
+            <div class="feature-media">
+              <video controls muted playsinline preload="metadata" poster="assets/portfolio/brain-poster.jpg">
+                <source src="assets/portfolio/brain-preview.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="feature-info">
+              <div>
+                <div class="work-index">01 / Knowledge Short</div>
+                <h3>大脑被短视频重新编程</h3>
+                <p>
+                  从信息焦虑切入，用强观点、密集节奏和 AI 视觉包装做知识短视频。核心价值在于把抽象议题转成有钩子、有画面、有完播动机的叙事。
+                </p>
+                <div class="tag-row">
+                  <span class="tag hot">脚本结构</span>
+                  <span class="tag">剪辑节奏</span>
+                  <span class="tag">AI 视觉</span>
+                  <span class="tag">知识内容</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                <div><strong>Role</strong>选题 / 脚本 / 视觉 / 剪辑</div>
+                <div><strong>Goal</strong>提高信息密度与传播记忆点</div>
+              </div>
+            </div>
+          </article>
+
+          <div class="work-strip">
+            <article class="work-tile portrait">
+              <video controls muted playsinline preload="metadata" poster="assets/portfolio/simaqian-poster.jpg">
+                <source src="assets/portfolio/simaqian-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="work-tile-body">
+                <h4>司马迁 2000 年前写好赚钱公式</h4>
+                <p>财经观点内容，用历史人物作为进入点，降低商业概念的理解门槛。</p>
+              </div>
+            </article>
+            <article class="work-tile portrait">
+              <video controls muted playsinline preload="metadata" poster="assets/portfolio/smart-poster.jpg">
+                <source src="assets/portfolio/smart-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="work-tile-body">
+                <h4>聪明人的内容陷阱</h4>
+                <p>观点型短视频，重在开头冲突、语义推进和口播节奏。</p>
+              </div>
+            </article>
+            <article class="work-tile">
+              <video controls muted playsinline preload="metadata" poster="assets/portfolio/magpie-poster.jpg">
+                <source src="assets/portfolio/magpie-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="work-tile-body">
+                <h4>仿《喜鹊谋杀案》片头</h4>
+                <p>用镜头、质感和节奏做风格化片头包装练习。</p>
+              </div>
+            </article>
+            <article class="work-tile">
+              <video controls muted playsinline preload="metadata" poster="assets/portfolio/frame-poster.jpg">
+                <source src="assets/portfolio/frame-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="work-tile-body">
+                <h4>首尾帧图生视频实验</h4>
+                <p>验证角色、镜头运动和转场连续性，适合扩展成广告或短片流程。</p>
+              </div>
+            </article>
+          </div>
+
+          <article class="feature-work">
+            <div class="feature-media">
+              <video controls muted playsinline preload="metadata" poster="assets/portfolio/flova-poster.jpg">
+                <source src="assets/portfolio/flova-preview.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="feature-info">
+              <div>
+                <div class="work-index">02 / AI Narrative</div>
+                <h3>《向上的路》AI 人物短片</h3>
+                <p>
+                  用人物弧光组织 AI 影像，重点不是单个画面是否漂亮，而是镜头之间能不能服务情绪推进和人物表达。
+                </p>
+                <div class="tag-row">
+                  <span class="tag hot">人物叙事</span>
+                  <span class="tag">AI 短片</span>
+                  <span class="tag">概念设计</span>
+                  <span class="tag">影像节奏</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                <div><strong>Role</strong>创意 / 画面生成 / 剪辑包装</div>
+                <div><strong>Potential</strong>人物短片 / 品牌精神片 / 栏目包装</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="case-band">
+        <section id="cases">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Case Studies</div>
+              <h2>我能把作品变成项目。</h2>
+            </div>
+            <p>
+              代表作背后需要有可验证项目。这里把履历转成项目语言，让招聘方或合作方看到我能承担的真实工作。
+            </p>
+          </div>
+          <div class="case-grid">
+            <article class="case">
+              <div class="meta">北京梧桐花开科技有限公司 | 2025.12 - 至今</div>
+              <h3>财经数字人 IP 与 AIGC 内容产线</h3>
+              <p>
+                负责 AI 视觉导演和市场 AI 应用，把财经内容从选题、脚本、广告文案到视频生产拆成可复用流程。
+              </p>
+              <ul>
+                <li><strong>选题系统：</strong>围绕基金、财经热点和投放素材建立方向库。</li>
+                <li><strong>智能体协作：</strong>用 Claude Code、Cursor 等工具提高文案与脚本迭代效率。</li>
+                <li><strong>影像落地：</strong>推进数字人栏目、AIGC 视频和广告素材的生产验证。</li>
+              </ul>
+            </article>
+            <article class="case">
+              <div class="meta">北京世哆睿安科技有限公司 | 2025.09 - 2025.11</div>
+              <h3>AI 短剧创作者运营与品控 SOP</h3>
+              <p>
+                面向 AI 短剧创作者生态，负责创作者沟通、提示词结构、项目品控和内容标准沉淀。
+              </p>
+              <ul>
+                <li><strong>生产提效：</strong>协助创作者把灵感拆成剧本、分镜、画面与成片流程。</li>
+                <li><strong>质量控制：</strong>关注人物一致性、镜头连贯性、叙事完整度和平台适配。</li>
+                <li><strong>流程沉淀：</strong>把高频问题整理成结构化 SOP，降低重复沟通成本。</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <section id="method">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Creative Operating System</div>
+            <h2>我的工作方式。</h2>
+          </div>
+          <p>
+            AI 内容不是“会很多工具”就够了，真正稳定的产出来自判断、流程和复盘。我的方法是先把内容问题拆清楚，再让工具进入正确位置。
+          </p>
+        </div>
+        <div class="method-grid">
+          <aside class="method-aside">
+            <h3>从内容判断出发，而不是从工具炫技出发。</h3>
+            <p>
+              工具链会变，但平台的注意力结构、人物情绪、信息密度和商业目标不会消失。我更关注如何让 AI 服务于这些稳定问题。
+            </p>
+          </aside>
+          <div class="method-steps">
+            <article class="step">
+              <span>01</span>
+              <h4>选题诊断</h4>
+              <p>判断这个内容为什么值得看，受众在第几秒会留下来。</p>
+            </article>
+            <article class="step">
+              <span>02</span>
+              <h4>脚本结构</h4>
+              <p>把冲突、信息、证据和转折安排成适合短视频平台的节奏。</p>
+            </article>
+            <article class="step">
+              <span>03</span>
+              <h4>AI 影像生产</h4>
+              <p>根据叙事目的选择图像、视频、数字人、配音和剪辑工具。</p>
+            </article>
+            <article class="step">
+              <span>04</span>
+              <h4>复盘沉淀</h4>
+              <p>把数据反馈转回提示词库、脚本模板和团队 SOP。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Resume</div>
+            <h2>履历与工具链。</h2>
+          </div>
+          <p>
+            我的背景横跨新媒体运营、短视频内容、AI 短剧创作者运营和财经 AIGC 内容生产，适合承担 AI 影像、内容策划和产线搭建类角色。
+          </p>
+        </div>
+        <div class="resume-grid">
+          <div class="resume-block">
+            <h3>Experience</h3>
+            <ul class="timeline">
+              <li>
+                <strong>北京梧桐花开科技有限公司 | AI 视觉导演 & 市场 AI 应用负责人</strong>
+                <span>2025.12 - 至今 | AIGC 视频工业化产线、财经数字人 IP、广告文案智能体</span>
+              </li>
+              <li>
+                <strong>北京世哆睿安科技有限公司 | AIGC 创作者运营</strong>
+                <span>2025.09 - 2025.11 | AI 短剧创作者生态、提示词结构库、品控 SOP</span>
+              </li>
+              <li>
+                <strong>陕西中秦传媒集团 | 短视频内容创作与博主运营</strong>
+                <span>2024.03 - 2025.09 | 文旅账号、品牌合作、投放复盘、爆款策划</span>
+              </li>
+              <li>
+                <strong>陕西明珠家居产业有限公司 | 新媒体运营</strong>
+                <span>2023.05 - 2024.02 | 模板化视频生产、电商转化、商户 IP 孵化</span>
+              </li>
+            </ul>
+          </div>
+          <div class="resume-block">
+            <h3>Education & Stack</h3>
+            <ul class="timeline">
+              <li>
+                <strong>北京交通大学 | 新闻与传播硕士</strong>
+                <span>2025.09 - 2027.06 | AIGC 内容生态、平台传播、内容质量评估</span>
+              </li>
+              <li>
+                <strong>西安邮电大学 | 网络与新媒体本科</strong>
+                <span>2019.09 - 2023.06 | 影视内容创作、综合测评 3/42、国家奖学金</span>
+              </li>
+              <li>
+                <strong>AI 与影像工具</strong>
+                <span>Claude Code、Cursor、ComfyUI、Runway、Midjourney、即梦、HeyGen、ElevenLabs</span>
+              </li>
+              <li>
+                <strong>能力关键词</strong>
+                <span>提示词工程、多智能体协作、短视频脚本、图生视频、数字人栏目、数据复盘</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="contact">
+      <div class="contact-inner">
+        <div>
+          <div class="kicker">Contact</div>
+          <h2>让 AI 内容变成可交付的作品。</h2>
+          <p>
+            可合作方向：AI 影像短片、短视频栏目、财经数字人内容、AIGC 工作流搭建、品牌视觉内容实验。
+          </p>
+        </div>
+        <div class="contact-panel">
+          <a href="mailto:genjieshi@gmail.com">genjieshi@gmail.com</a>
+          <a href="assets/portfolio/shigenjie-resume.docx" download>下载 Word 简历</a>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
