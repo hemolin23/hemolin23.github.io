@@ -568,7 +568,7 @@
         position: relative;
         overflow: hidden;
         border: 12px solid #12110f;
-        background: #12110f;
+        background: url("assets/portfolio/vibe-coding-demo-poster.jpg") center / cover no-repeat #12110f;
         box-shadow: 0 28px 62px rgba(28, 25, 21, 0.18);
       }
 
@@ -804,6 +804,8 @@
       }
 
       .director-gallery .highlight-card img {
+        display: block;
+        width: 100%;
         aspect-ratio: 1478 / 846;
         height: auto;
         object-fit: cover;
@@ -832,6 +834,7 @@
           box-shadow 180ms ease;
       }
 
+      .work-poster,
       .work-card video,
       .work-card img {
         width: 100%;
@@ -840,11 +843,29 @@
         object-fit: cover;
       }
 
+      .work-poster {
+        display: block;
+      }
+
+      .work-card video {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 180ms ease;
+      }
+
+      .work-card.is-playing video,
+      .work-card:hover video {
+        opacity: 1;
+      }
+
       .work-card .caption {
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
+        z-index: 2;
         padding: 12px;
         color: #fff;
         background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
@@ -1524,31 +1545,35 @@
             </div>
             <div class="poster-grid reveal">
               <article class="work-card wide-card">
+                <img class="work-poster" src="assets/portfolio/aigc-highlight-reel-poster.jpg" alt="AIGC 高光混剪 Showreel 封面" />
                 <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/aigc-highlight-reel-poster.jpg">
                   <source src="assets/portfolio/aigc-highlight-reel.mp4" type="video/mp4" />
                 </video>
                 <div class="caption">AIGC 高光混剪 Showreel</div>
               </article>
               <article class="work-card">
+                <img class="work-poster" src="assets/portfolio/brain-poster.jpg" alt="知识类短片封面" />
                 <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/brain-poster.jpg">
                   <source src="assets/portfolio/brain-preview.mp4" type="video/mp4" />
                 </video>
                 <div class="caption">知识类短片</div>
               </article>
               <article class="work-card">
+                <img class="work-poster" src="assets/portfolio/smart-poster.jpg" alt="财经内容 IP 封面" />
                 <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/smart-poster.jpg">
                   <source src="assets/portfolio/smart-preview.mp4" type="video/mp4" />
                 </video>
                 <div class="caption">财经内容 IP</div>
               </article>
               <article class="work-card">
+                <img class="work-poster" src="assets/portfolio/knowledge-poster.jpg" alt="知识穿越短片封面" />
                 <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/knowledge-poster.jpg">
                   <source src="assets/portfolio/knowledge-preview.mp4" type="video/mp4" />
                 </video>
                 <div class="caption">知识穿越短片</div>
               </article>
               <article class="work-card wide-card">
-                <img class="full-gif" src="assets/portfolio/hemo-product-demo.gif" alt="AI 产品官网动效" />
+                <img class="full-gif" src="assets/portfolio/hemo-product-demo-poster.jpg" alt="AI 产品官网展示封面" />
                 <div class="caption">AI App 官网展示 GIF</div>
               </article>
             </div>
@@ -1574,58 +1599,58 @@
             </div>
             <div class="highlight-gallery director-gallery" aria-label="AI 视频导演 contact sheet">
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/01-ai-opening.jpg" data-no="01" data-title="AI 全年无休片头" data-meta="开场钩子 / 视觉符号 / 叙事收束" aria-label="查看 AI 全年无休片头导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/01-ai-opening.jpg" alt="AI 全年无休片头 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/01-ai-opening.jpg" alt="AI 全年无休片头 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/02-brand-frame-02.jpg" data-no="02" data-title="首尾帧案例 02" data-meta="品牌包装 / 首尾呼应 / 商业视觉" aria-label="查看首尾帧案例 02导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/02-brand-frame-02.jpg" alt="首尾帧案例 02 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/02-brand-frame-02.jpg" alt="首尾帧案例 02 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/03-brand-frame-01.jpg" data-no="03" data-title="首尾帧案例 01" data-meta="动效系统 / 信息递进 / 品牌记忆点" aria-label="查看首尾帧案例 01导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/03-brand-frame-01.jpg" alt="首尾帧案例 01 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/03-brand-frame-01.jpg" alt="首尾帧案例 01 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/04-ai-awakening.jpg" data-no="04" data-title="AI 觉醒：元界面出逃" data-meta="人物调度 / 冷色影调 / 情绪递进" aria-label="查看 AI 觉醒：元界面出逃导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/04-ai-awakening.jpg" alt="AI 觉醒：元界面出逃 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/04-ai-awakening.jpg" alt="AI 觉醒：元界面出逃 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/05-xunfei-earbuds.jpg" data-no="05" data-title="讯飞智能体耳机品牌视频" data-meta="产品场景 / 用户视角 / 功能转译" aria-label="查看讯飞智能体耳机品牌视频导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/05-xunfei-earbuds.jpg" alt="讯飞智能体耳机品牌视频 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/05-xunfei-earbuds.jpg" alt="讯飞智能体耳机品牌视频 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/06-smart-finance.jpg" data-no="06" data-title="聪明人财经内容" data-meta="财经 IP / 人物叙事 / 观点节奏" aria-label="查看聪明人财经内容导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/06-smart-finance.jpg" alt="聪明人财经内容 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/06-smart-finance.jpg" alt="聪明人财经内容 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/07-simaqian-finance.jpg" data-no="07" data-title="司马迁赚钱公式" data-meta="历史概念 / 财经转译 / 镜头推进" aria-label="查看司马迁赚钱公式导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/07-simaqian-finance.jpg" alt="司马迁赚钱公式 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/07-simaqian-finance.jpg" alt="司马迁赚钱公式 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/08-brain-short-video.jpg" data-no="08" data-title="大脑被短视频重新编程" data-meta="知识短片 / 概念可视化 / 强节奏" aria-label="查看大脑被短视频重新编程导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/08-brain-short-video.jpg" alt="大脑被短视频重新编程 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/08-brain-short-video.jpg" alt="大脑被短视频重新编程 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/09-biology-visual.jpg" data-no="09" data-title="生物视觉短片" data-meta="科学视觉 / 画面隐喻 / 氛围控制" aria-label="查看生物视觉短片导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/09-biology-visual.jpg" alt="生物视觉短片 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/09-biology-visual.jpg" alt="生物视觉短片 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/10-knowledge-time-travel.jpg" data-no="10" data-title="知识穿越短片" data-meta="时间叙事 / 场景转换 / 信息密度" aria-label="查看知识穿越短片导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/10-knowledge-time-travel.jpg" alt="知识穿越短片 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/10-knowledge-time-travel.jpg" alt="知识穿越短片 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/11-beyond-letters.jpg" data-no="11" data-title="字母之外" data-meta="抽象主题 / 视觉诗性 / 风格探索" aria-label="查看字母之外导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/11-beyond-letters.jpg" alt="字母之外 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/11-beyond-letters.jpg" alt="字母之外 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/12-ink-style-test.jpg" data-no="12" data-title="山水风格样片" data-meta="风格测试 / 东方视觉 / 镜头留白" aria-label="查看山水风格样片导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/12-ink-style-test.jpg" alt="山水风格样片 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/12-ink-style-test.jpg" alt="山水风格样片 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/13-product-concept-01.jpg" data-no="13" data-title="产品概念成片 01" data-meta="产品概念 / 场景表达 / 用户想象" aria-label="查看产品概念成片 01导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/13-product-concept-01.jpg" alt="产品概念成片 01 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/13-product-concept-01.jpg" alt="产品概念成片 01 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/14-product-concept-02.jpg" data-no="14" data-title="产品概念成片 02" data-meta="AI 工作流 / 交互想象 / 叙事包装" aria-label="查看产品概念成片 02导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/14-product-concept-02.jpg" alt="产品概念成片 02 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/14-product-concept-02.jpg" alt="产品概念成片 02 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/15-mothers-day.jpg" data-no="15" data-title="母亲节快乐" data-meta="情绪短片 / 节日节点 / 生活质感" aria-label="查看母亲节快乐导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/15-mothers-day.jpg" alt="母亲节快乐 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/15-mothers-day.jpg" alt="母亲节快乐 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/16-mothers-day-02.jpg" data-no="16" data-title="母亲节快乐 02" data-meta="移动端叙事 / 情感递进 / 真实感" aria-label="查看母亲节快乐 02导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/16-mothers-day-02.jpg" alt="母亲节快乐 02 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/16-mothers-day-02.jpg" alt="母亲节快乐 02 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/17-luoxiang-portrait.jpg" data-no="17" data-title="罗翔：向上的路人物短片" data-meta="人物短片 / 情绪弧线 / 访谈质感" aria-label="查看罗翔：向上的路人物短片导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/17-luoxiang-portrait.jpg" alt="罗翔：向上的路人物短片 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/17-luoxiang-portrait.jpg" alt="罗翔：向上的路人物短片 9 张导演关键帧" />
               </a>
               <a class="highlight-card" href="assets/portfolio/highlight-sheets/18-daily-footage.jpg" data-no="18" data-title="日常影像素材" data-meta="生活观察 / 镜头练习 / 素材判断" aria-label="查看日常影像素材导演九宫格">
-                <img loading="lazy" src="assets/portfolio/highlight-sheets/18-daily-footage.jpg" alt="日常影像素材 9 张导演关键帧" />
+                <img decoding="async" src="assets/portfolio/highlight-sheets/18-daily-footage.jpg" alt="日常影像素材 9 张导演关键帧" />
               </a>
             </div>
           </section>
@@ -1669,24 +1694,28 @@
           </div>
           <div class="poster-grid reveal" style="margin-top: 44px">
             <article class="work-card">
+              <img class="work-poster" src="assets/portfolio/xunfei-poster.jpg" alt="讯飞智能体耳机封面" />
               <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/xunfei-poster.jpg">
                 <source src="assets/portfolio/xunfei-preview.mp4" type="video/mp4" />
               </video>
               <div class="caption">讯飞智能体耳机</div>
             </article>
             <article class="work-card">
+              <img class="work-poster" src="assets/portfolio/simaqian-poster.jpg" alt="司马迁财经短片封面" />
               <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/simaqian-poster.jpg">
                 <source src="assets/portfolio/simaqian-preview.mp4" type="video/mp4" />
               </video>
               <div class="caption">司马迁财经短片</div>
             </article>
             <article class="work-card">
+              <img class="work-poster" src="assets/portfolio/flova-poster.jpg" alt="人物短片封面" />
               <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/flova-poster.jpg">
                 <source src="assets/portfolio/flova-preview.mp4" type="video/mp4" />
               </video>
               <div class="caption">人物短片</div>
             </article>
             <article class="work-card">
+              <img class="work-poster" src="assets/portfolio/letters-poster.jpg" alt="视觉叙事短片封面" />
               <video class="work-video" muted playsinline loop preload="metadata" poster="assets/portfolio/letters-poster.jpg">
                 <source src="assets/portfolio/letters-preview.mp4" type="video/mp4" />
               </video>
@@ -1787,10 +1816,15 @@
       updateProgress();
 
       document.querySelectorAll(".work-video").forEach((video) => {
-        video.addEventListener("pointerenter", () => video.play().catch(() => {}));
+        const card = video.closest(".work-card");
+        video.addEventListener("pointerenter", () => {
+          card?.classList.add("is-playing");
+          video.play().catch(() => card?.classList.remove("is-playing"));
+        });
         video.addEventListener("pointerleave", () => {
           video.pause();
           video.currentTime = 0;
+          card?.classList.remove("is-playing");
         });
       });
 
