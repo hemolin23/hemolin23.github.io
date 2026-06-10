@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石根洁 | AI Director Casebook</title>
+<meta name="description" content="石根洁 AI 导演作品集:AI 短剧、数字人短剧、分镜设计、生图管线与品牌商业片。">
+<style>
+  :root{--ink:#111;--sub:#777;--line:#e8e4dc;--paper:#fcfbf8;--accent:#111;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Songti SC","Noto Serif SC",Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.85;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  .mono{font-family:"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.14em;color:var(--sub);text-transform:uppercase;}
+  nav{position:sticky;top:0;background:rgba(252,251,248,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:9;}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;}
+  nav a{color:var(--ink);text-decoration:none;font-size:13px;margin-left:22px;}
+  nav a:hover{border-bottom:1px solid var(--ink);}
+  .cover{padding:110px 0 90px;border-bottom:1px solid var(--line);}
+  .cover h1{font-size:clamp(44px,7.5vw,92px);font-weight:900;line-height:1.15;letter-spacing:.02em;margin:18px 0 8px;}
+  .cover .zh{font-size:20px;font-weight:700;margin-bottom:22px;}
+  .cover p.sub{color:var(--sub);max-width:660px;font-size:15.5px;}
+  .stats{display:flex;gap:56px;flex-wrap:wrap;margin-top:54px;}
+  .stats b{display:block;font-size:30px;font-weight:900;}
+  .stats span{font-size:12.5px;color:var(--sub);}
+  section{padding:84px 0;border-bottom:1px solid var(--line);}
+  .label{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+  .label .pno{font-family:Menlo,monospace;font-size:12px;border:1px solid var(--ink);border-radius:999px;padding:2px 12px;}
+  h2{font-size:32px;font-weight:800;margin:10px 0 6px;}
+  .lede{color:var(--sub);max-width:780px;margin-bottom:38px;font-size:15px;}
+  .grid{display:grid;gap:12px;}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  figure{background:#fff;border:1px solid var(--line);padding:7px;}
+  figure img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;}
+  figure.portrait img{aspect-ratio:3/4;}
+  figcaption{font-size:11.5px;color:var(--sub);padding:7px 3px 1px;font-family:Menlo,monospace;}
+  .pipeline{display:grid;grid-template-columns:repeat(5,1fr);margin:34px 0 38px;counter-reset:s;}
+  .pipeline div{border-left:1px solid var(--line);padding:2px 16px;}
+  .pipeline div::before{counter-increment:s;content:"0" counter(s);font-family:Menlo,monospace;font-size:11px;color:var(--sub);display:block;margin-bottom:4px;}
+  .pipeline b{display:block;font-size:14.5px;margin-bottom:3px;}
+  .pipeline span{font-size:12px;color:var(--sub);line-height:1.6;display:block;}
+  .statement{font-size:23px;font-weight:700;line-height:1.7;max-width:860px;}
+  .sub-h{font-size:17px;font-weight:800;margin:42px 0 16px;display:flex;gap:10px;align-items:baseline;}
+  .sub-h .mono{font-size:10.5px;}
+  .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;}
+  .tags span{border:1px solid var(--ink);padding:3px 14px;font-size:12.5px;border-radius:999px;}
+  .note{font-size:12px;color:#a8a094;margin-top:18px;}
+  footer{padding:80px 0 100px;text-align:center;}
+  footer h3{font-size:34px;font-weight:900;margin:14px 0 10px;}
+  @media(max-width:780px){.g3,.g4{grid-template-columns:repeat(2,1fr);}.pipeline{grid-template-columns:1fr 1fr;gap:14px;}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="mono">Shi Genjie · Casebook</span>
+  <span><a href="https://hemolin23.github.io/index.html">← Home</a><a href="director.html">AI Director</a><a href="operations.html">Ops × Growth</a></span>
+</div></nav>
+
+<header class="wrap cover">
+  <div class="mono">Portfolio Subpage 01 · AI Director · 2023—2026</div>
+  <h1>AI Director<br>Casebook</h1>
+  <div class="zh">AI 导演作品集 —— 剧本 · 选角 · 分镜 · 生成 · 品控</div>
+  <p class="sub">影视内容创作科班出身。我把传统导演管线完整搬进 AI 工作流:从原创剧本和 AI 选角,到分镜节奏与逐帧品控。AI 负责吞吐量,我负责判断——哪一帧成立,哪一帧必须毙掉。</p>
+  <div class="stats">
+    <div><b>100+</b><span>商业成片交付</span></div>
+    <div><b>30+</b><span>AI 短剧集数(含 16 集连载)</span></div>
+    <div><b>1000万+</b><span>商单内容总播放</span></div>
+    <div><b>15%→40%</b><span>爆款率(AI 量产+人工筛选)</span></div>
+  </div>
+</header>
+
+<section class="wrap" id="ep01">
+  <div class="label"><span class="pno">Portfolio 1</span><span class="mono">Original AI Series · North America</span></div>
+  <h2>北美向 AI 短剧 · 第一集全流程</h2>
+  <p class="lede">独立完成的完整导演管线:原创剧本 S1E01、15 秒亮相分镜、Casting 文档与角色形象资产库、EP01 分镜脚本、14 组镜头逐一生成与品控、预告样片与片头动效。面向北美市场,全流程 AI 化。</p>
+  <div class="pipeline">
+    <div><b>剧本</b><span>原创剧本 S1E01 + 15s 亮相分镜文档</span></div>
+    <div><b>选角</b><span>Ethan / Liam / Simon 等角色形象资产库,跨镜头一致性</span></div>
+    <div><b>分镜</b><span>EP01 分镜脚本,逐镜头标注景别与情绪</span></div>
+    <div><b>生成</b><span>14 组镜头,筛除失真,保持风格连续</span></div>
+    <div><b>成片</b><span>预告样片 + 字母动效片头 + 商标动画</span></div>
+  </div>
+  <div class="grid g4">
+    <figure><img src="assets/ep-trailer-2.jpg"><figcaption>Trailer · 人物特写</figcaption></figure>
+    <figure><img src="assets/ep-trailer-1.jpg"><figcaption>Trailer · 夜场氛围</figcaption></figure>
+    <figure><img src="assets/ep-shot4.jpg"><figcaption>EP01 · 夜戏</figcaption></figure>
+    <figure><img src="assets/ep-shot11.jpg"><figcaption>EP01 · 情绪推进</figcaption></figure>
+    <figure><img src="assets/ep-s2.jpg"><figcaption>EP01 · 场景定调</figcaption></figure>
+    <figure><img src="assets/ep-s5.jpg"><figcaption>EP01 · 对话镜头</figcaption></figure>
+    <figure><img src="assets/ep-s7.jpg"><figcaption>EP01 · 主观视角</figcaption></figure>
+    <figure><img src="assets/ep-s9.jpg"><figcaption>EP01 · 反应镜头</figcaption></figure>
+    <figure><img src="assets/ep-s13.jpg"><figcaption>EP01 · 舞台戏</figcaption></figure>
+    <figure><img src="assets/ep-shot1.jpg"><figcaption>EP01 · 城市夜景定场</figcaption></figure>
+    <figure><img src="assets/ep-j2.jpg"><figcaption>EP01 · 运动镜头</figcaption></figure>
+    <figure><img src="assets/ep-letter.jpg"><figcaption>片头 · 字母动效</figcaption></figure>
+  </div>
+  <div class="sub-h">AI Casting · 角色形象资产库<span class="mono">Character Consistency</span></div>
+  <div class="grid g4">
+    <figure class="portrait"><img src="assets/cast-ethan.jpg"><figcaption>Ethan · 定版</figcaption></figure>
+    <figure class="portrait"><img src="assets/cast-ethan2.jpg"><figcaption>Ethan · 场景变体</figcaption></figure>
+    <figure class="portrait"><img src="assets/cast-liam.jpg"><figcaption>Liam · 定版</figcaption></figure>
+    <figure class="portrait"><img src="assets/cast-liam2.jpg"><figcaption>Liam · 概念变体</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="mumu">
+  <div class="label"><span class="pno">Portfolio 2</span><span class="mono">Digital Human Series · 16 Episodes</span></div>
+  <h2>数字人短剧 · 16 集连载品控</h2>
+  <p class="lede">北美市场数字人短剧(第 85—100 集):多角色、多场景、长连载约束下保持人物一致性与叙事连续性——AI 短剧最难的工程问题。每集完成「剧情拆解 → 场景图生成 → 图生视频 → 品控筛选」闭环,另有 Storeel 平台试稿成片。</p>
+  <div class="grid g4">
+    <figure><img src="assets/mumu-1.jpg"><figcaption>EP85 · 初来乍到的烦恼</figcaption></figure>
+    <figure><img src="assets/mumu-2.jpg"><figcaption>EP89 · 寻求真相</figcaption></figure>
+    <figure><img src="assets/mumu-5.jpg"><figcaption>EP87 · 走廊追问</figcaption></figure>
+    <figure><img src="assets/mumu-6.jpg"><figcaption>EP91 · 日常的挣扎与梦想</figcaption></figure>
+    <figure><img src="assets/mumu-7.jpg"><figcaption>EP92 · 盛会前的准备</figcaption></figure>
+    <figure><img src="assets/mumu-3.jpg"><figcaption>EP93 · 意外的相遇</figcaption></figure>
+    <figure><img src="assets/mumu-8.jpg"><figcaption>EP97 · 楼下的八卦</figcaption></figure>
+    <figure><img src="assets/mumu-4.jpg"><figcaption>EP100 · 图书馆外的坚定支持</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="series">
+  <div class="label"><span class="pno">Portfolio 3</span><span class="mono">Original Series Universe</span></div>
+  <h2>原创短剧宇宙 · 《灵探》与《诡梦空间》</h2>
+  <p class="lede">《灵探》系列短剧 EP01—05,完成剧本、动态漫风格视觉、音乐音效与字幕全包装;《诡梦空间》为原创小说改编先导片,验证悬疑类型的 AI 视觉方案。</p>
+  <div class="grid g3">
+    <figure><img src="assets/lt-ep1.jpg"><figcaption>灵探 EP01</figcaption></figure>
+    <figure><img src="assets/lt-ep2.jpg"><figcaption>灵探 EP02</figcaption></figure>
+    <figure><img src="assets/lt-ep4.jpg"><figcaption>灵探 EP04</figcaption></figure>
+    <figure><img src="assets/lt-ep5.jpg"><figcaption>灵探 EP05</figcaption></figure>
+    <figure><img src="assets/gm-1.jpg"><figcaption>诡梦空间 · 先导片</figcaption></figure>
+    <figure><img src="assets/gm-2.jpg"><figcaption>诡梦空间 · 氛围镜头</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="fantasy">
+  <div class="label"><span class="pno">Portfolio 4</span><span class="mono">Stylized & VFX Series</span></div>
+  <h2>古风 · 玄幻 · 动态漫视效系列</h2>
+  <p class="lede">风格化是 AI 视频的分水岭:写实之外,我持续测试古风、玄幻、动态漫等风格管线——打斗调度、施法特效、生物设计与朝代视觉对比,沉淀成可复用的风格配方。</p>
+  <div class="sub-h">《桃花》古风短剧 Demo · EP1—4<span class="mono">Costume Drama</span></div>
+  <div class="grid g4">
+    <figure><img src="assets/th-1.jpg"><figcaption>桃花 EP1 · 美术定调</figcaption></figure>
+    <figure><img src="assets/th-2.jpg"><figcaption>桃花 EP2 · 人物戏</figcaption></figure>
+    <figure><img src="assets/th-3.jpg"><figcaption>桃花 EP3 · 场景叙事</figcaption></figure>
+    <figure><img src="assets/th-4.jpg"><figcaption>桃花 EP4 · 服化道一致性</figcaption></figure>
+  </div>
+  <div class="sub-h">玄幻视效与类型测试<span class="mono">VFX / Genre Tests</span></div>
+  <div class="grid g4">
+    <figure><img src="assets/fx-1.jpg"><figcaption>法相出场 · 施法特效</figcaption></figure>
+    <figure><img src="assets/xx-1.jpg"><figcaption>仙侠打斗测试</figcaption></figure>
+    <figure><img src="assets/cl-2.jpg"><figcaption>《沧澜》· 生物设计</figcaption></figure>
+    <figure><img src="assets/ss-1.jpg"><figcaption>《兽世》动画</figcaption></figure>
+    <figure><img src="assets/trad-manga.jpg"><figcaption>动态漫 Demo 1</figcaption></figure>
+    <figure><img src="assets/manga2.jpg"><figcaption>动态漫 Demo 2</figcaption></figure>
+    <figure><img src="assets/x749.jpg"><figcaption>《749》类型片测试</figcaption></figure>
+    <figure><img src="assets/cmp-1.jpg"><figcaption>朝代视觉对比研究</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="process">
+  <div class="label"><span class="pno">Portfolio 5</span><span class="mono">Pipeline & Process</span></div>
+  <h2>工程与过程 · AI 怎么听导演的话</h2>
+  <p class="lede">成片背后是可复现的管线:角色生图的迭代过程、剪辑工程的轨道编排、分镜库的导演判断。这些过程资产沉淀为《文生图提示词结构库》与品控 SOP,让"我的审美"变成"团队的标准"。</p>
+  <div class="grid g3">
+    <figure><img src="assets/xx-eng.jpg"><figcaption>仙侠打斗 · 剪辑工程图(轨道编排)</figcaption></figure>
+    <figure><img src="assets/gen-p1.jpg"><figcaption>角色生图 · 迭代过程 1</figcaption></figure>
+    <figure><img src="assets/gen-p2.jpg"><figcaption>角色生图 · 迭代过程 2</figcaption></figure>
+    <figure><img src="assets/gen-r1.jpg"><figcaption>Raphael · 造型变体</figcaption></figure>
+    <figure><img src="assets/gen-r2.jpg"><figcaption>Raphael · 造型变体</figcaption></figure>
+    <figure><img src="assets/gen-simon.jpg"><figcaption>Simon · 形象定版</figcaption></figure>
+    <figure><img src="assets/gen-emerson.jpg"><figcaption>Emerson · 形象定版</figcaption></figure>
+    <figure><img src="assets/gen-leonardo.jpg"><figcaption>Leonardo · 形象定版</figcaption></figure>
+    <figure><img src="assets/gen-p3.jpg"><figcaption>生图管线 · 过程记录</figcaption></figure>
+  </div>
+  <div class="sub-h">分镜库 · 导演判断样本<span class="mono">Director Contact Sheets</span></div>
+  <p class="lede">每一帧回答三个问题:这个景别为什么成立、情绪往哪里推、与上一镜的视觉连续性在哪。</p>
+  <div class="grid g4">
+    <figure><img src="assets/jt-2.jpg"><figcaption>室内情绪戏 · 光比</figcaption></figure>
+    <figure><img src="assets/jt-7.jpg"><figcaption>特写 · 情绪转折帧</figcaption></figure>
+    <figure><img src="assets/jt-3.jpg"><figcaption>人物肖像 · 质感</figcaption></figure>
+    <figure><img src="assets/jt-5.jpg"><figcaption>人物状态帧</figcaption></figure>
+    <figure><img src="assets/jt-9.jpg"><figcaption>职场场景调度</figcaption></figure>
+    <figure><img src="assets/jt-15.jpg"><figcaption>镜面构图</figcaption></figure>
+    <figure><img src="assets/jt-21.jpg"><figcaption>外景 · 情绪亮部</figcaption></figure>
+    <figure><img src="assets/jt-18.jpg"><figcaption>群像 · 动态构图</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="brand">
+  <div class="label"><span class="pno">Portfolio 6</span><span class="mono">Brand & Commercial</span></div>
+  <h2>品牌商业片 · AI 之前我就在做内容</h2>
+  <p class="lede">五粮液全球行系列(西班牙篇 / EFQM 全球大会)、品牌宣传片与剧情短片。传统拍剪经验是 AI 品控时"知道什么是好画面"的底气。</p>
+  <div class="grid g4">
+    <figure><img src="assets/trad-wly-1.jpg"><figcaption>五粮液全球行 · 西班牙篇</figcaption></figure>
+    <figure><img src="assets/trad-wly-2.jpg"><figcaption>五粮液全球行 · EFQM</figcaption></figure>
+    <figure><img src="assets/xuan-1.jpg"><figcaption>品牌宣传片</figcaption></figure>
+    <figure><img src="assets/duan-1.jpg"><figcaption>剧情短片</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="method">
+  <div class="label"><span class="pno">Portfolio 7</span><span class="mono">Methodology</span></div>
+  <h2>方法论</h2>
+  <p class="statement">"AI 批量生成种子 → 人工审美筛选 → 数据反馈迭代。"这套流程把爆款率从 15% 做到 40%,把单条产出从 2 小时压到 15 分钟。工具会过时,镜头语言和判断不会。</p>
+  <div class="tags"><span>剧本 / 分镜</span><span>AI 选角与角色一致性</span><span>图生视频管线</span><span>风格化配方</span><span>节奏与品控</span><span>提示词结构库 SOP</span><span>即梦 / 可灵 / HeyGen / Seko / Flova</span><span>剪映 / 剪辑工程</span></div>
+</section>
+
+<footer class="wrap">
+  <div class="mono">Thanks for watching</div>
+  <h3>石根洁</h3>
+  <p style="color:var(--sub);font-size:14px;">15191550879 · 2621276572@qq.com · 杭州</p>
+  <p style="margin-top:10px;font-size:13px;"><a href="https://hemolin23.github.io/index.html" style="color:var(--ink);">← 返回主作品集</a> · <a href="operations.html" style="color:var(--ink);">运营 × 增长子页 →</a></p>
+  <p class="note">本页所有画面均为本人参与创作的真实项目产出;部分商业项目信息已脱敏。</p>
+</footer>
+
+</body>
+</html>
