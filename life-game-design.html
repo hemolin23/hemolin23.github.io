@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石根洁 | 人生交互游戏设计</title>
+<meta name="description" content="石根洁人生交互游戏设计作品集:《出生点：村落》横屏电影档案式网页探索游戏。">
+<style>
+  :root{--ink:#121614;--sub:#74746c;--line:#e6e0d5;--paper:#fcfbf8;--deep:#111c1b;--gold:#a9894d;--mist:#eef0ea;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Songti SC","Noto Serif SC",Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.85;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  .mono{font-family:"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.14em;color:var(--sub);text-transform:uppercase;}
+  nav{position:sticky;top:0;background:rgba(252,251,248,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:9;}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;}
+  nav a{color:var(--ink);text-decoration:none;font-size:13px;margin-left:22px;}
+  nav a:hover{border-bottom:1px solid var(--ink);}
+  .cover{padding:104px 0 86px;border-bottom:1px solid var(--line);}
+  .cover-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(340px,.98fr);gap:42px;align-items:end;}
+  h1{font-size:clamp(42px,7.4vw,92px);font-weight:900;line-height:1.13;letter-spacing:.02em;margin:18px 0 8px;}
+  .zh{font-size:20px;font-weight:800;margin-bottom:22px;}
+  .sub{color:var(--sub);max-width:680px;font-size:15.5px;}
+  .hero-frame{background:#fff;border:1px solid var(--line);padding:8px;}
+  .hero-frame img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;filter:saturate(.9) contrast(1.03);}
+  .hero-note{display:flex;justify-content:space-between;gap:18px;padding:10px 3px 2px;color:var(--sub);font-size:11.5px;}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border:1px solid var(--ink);padding:6px 18px;color:var(--ink);text-decoration:none;font-size:13px;background:transparent;}
+  .btn.primary{background:var(--ink);color:#fff;}
+  .stats{display:flex;gap:42px;flex-wrap:wrap;margin-top:48px;}
+  .stats b{display:block;font-size:30px;font-weight:900;}
+  .stats span{font-size:12.5px;color:var(--sub);}
+  section{padding:84px 0;border-bottom:1px solid var(--line);}
+  .label{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+  .label .pno{font-family:Menlo,monospace;font-size:12px;border:1px solid var(--ink);border-radius:999px;padding:2px 12px;}
+  h2{font-size:32px;font-weight:800;margin:10px 0 6px;}
+  .lede{color:var(--sub);max-width:820px;margin-bottom:36px;font-size:15px;}
+  .statement{font-size:23px;font-weight:700;line-height:1.72;max-width:880px;}
+  .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin:34px 0 38px;border:1px solid var(--line);background:#fff;}
+  .flow div{min-height:126px;border-right:1px solid var(--line);padding:17px 16px;}
+  .flow div:last-child{border-right:0;}
+  .flow b{display:block;font-size:14.5px;margin-bottom:6px;}
+  .flow span{display:block;color:var(--sub);font-size:12.5px;line-height:1.65;}
+  .grid{display:grid;gap:12px;}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  figure{background:#fff;border:1px solid var(--line);padding:7px;}
+  figure img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;}
+  figcaption{font-size:11.5px;color:var(--sub);padding:7px 3px 1px;font-family:Menlo,monospace;}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px;}
+  .card{background:#fff;border:1px solid var(--line);padding:20px;min-height:176px;}
+  .card b{display:block;font-size:15px;margin-bottom:8px;}
+  .card p{font-size:13px;color:var(--sub);}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:13.5px;margin:26px 0;}
+  th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{font-weight:800;background:#f4f1ea;}
+  td:first-child{color:var(--sub);white-space:nowrap;}
+  .dark{background:var(--deep);color:#ede9de;border-bottom:0;}
+  .dark .wrap{display:grid;grid-template-columns:minmax(0,.78fr) minmax(320px,1.22fr);gap:42px;align-items:center;}
+  .dark .mono,.dark .lede{color:#aeb5aa;}
+  .dark .label .pno{border-color:#ede9de;}
+  .dark figure{background:#162321;border-color:#52655d;}
+  .dark figcaption{color:#b8b59f;}
+  .archive{border:1px solid #52655d;background:#172220;padding:24px;}
+  .archive p{font-size:14px;color:#d7d2c3;margin-bottom:18px;}
+  .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;}
+  .tags span{border:1px solid currentColor;padding:3px 14px;font-size:12.5px;border-radius:999px;}
+  footer{padding:80px 0 100px;text-align:center;}
+  footer h3{font-size:34px;font-weight:900;margin:14px 0 10px;}
+  @media(max-width:900px){.cover-grid,.dark .wrap{grid-template-columns:1fr;}.flow{grid-template-columns:repeat(2,1fr);}.flow div:nth-child(2n){border-right:0;}.flow div{border-bottom:1px solid var(--line);}.flow div:nth-last-child(-n+2){border-bottom:0;}.g4,.cards{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:620px){.wrap{padding:0 20px;}nav .wrap{height:auto;min-height:54px;align-items:flex-start;padding-top:12px;padding-bottom:12px;gap:10px;}nav .wrap>span:last-child{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;}nav a{margin-left:0;}.g2,.g4,.cards,.flow{grid-template-columns:1fr;}.flow div,.flow div:nth-child(2n){border-right:0;border-bottom:1px solid var(--line);}.flow div:last-child{border-bottom:0;}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="mono">Shi Genjie · Casebook</span>
+  <span><a href="https://hemolin23.github.io/index.html">← Home</a><a href="director.html">AI Director</a><a href="operations.html">Ops × Growth</a><a href="life-game-design.html">Life Game</a></span>
+</div></nav>
+
+<header class="wrap cover">
+  <div class="cover-grid">
+    <div>
+      <div class="mono">Portfolio Subpage 03 · Interactive Life Game · 2026</div>
+      <h1>人生交互<br>游戏设计</h1>
+      <div class="zh">《出生点：村落》—— 横屏电影档案式网页探索游戏</div>
+      <p class="sub">把一段真实成长经历拆成可交互的地图、节点、风险变量与档案系统。玩家不是“重选人生”，而是在有限信息里读取当时可见的地图访问权、资源差、支持网络与机会窗口。</p>
+      <div class="actions">
+        <a class="btn primary" href="birthpoint-village/">进入可玩项目</a>
+        <a class="btn" href="https://hemolin23.github.io/birthpoint-village/">打开线上链接</a>
+      </div>
+      <div class="stats">
+        <div><b>8</b><span>人生节点</span></div>
+        <div><b>16</b><span>电影片段</span></div>
+        <div><b>5</b><span>风险变量</span></div>
+        <div><b>1</b><span>可玩档案</span></div>
+      </div>
+    </div>
+    <figure class="hero-frame">
+      <img src="birthpoint-village/assets/village-hero.png" alt="《出生点：村落》横屏地图视觉">
+      <figcaption class="hero-note"><span>Birthpoint Village · Map Access Log</span><span>Playable Web Prototype</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="label"><span class="pno">Design 1</span><span class="mono">Core Mechanism</span></div>
+  <h2>不是重选人生，而是读取当时存在过的可能性</h2>
+  <p class="statement">这个项目的核心不是让玩家站在上帝视角做“最优选择”，而是把低资源成长中的不可见限制做成系统：出生点决定初始地图，支持网络改变可承受风险，机会窗口只在某些时刻短暂出现。</p>
+  <div class="flow">
+    <div><b>出生点</b><span>家庭资源、地理位置、初始教程缺失</span></div>
+    <div><b>节点事件</b><span>学校、家庭、县城、窗口、组织与创作</span></div>
+    <div><b>路线推演</b><span>每个选择先显示诱惑，再显示代价</span></div>
+    <div><b>风险变量</b><span>时间、金钱、关系、信息差、心理耗损</span></div>
+    <div><b>原始存档</b><span>展示真实选择与永久资产</span></div>
+    <div><b>未来样本</b><span>把个人经验开放成可被他人读取的系统</span></div>
+  </div>
+  <div class="tags">
+    <span>Narrative System</span><span>Interactive Archive</span><span>AIGC Video</span><span>Web Game Prototype</span>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="label"><span class="pno">Design 2</span><span class="mono">Interaction Structure</span></div>
+  <h2>地图访问权、风险预览、支持网络</h2>
+  <p class="lede">页面结构采用横屏电影档案：玩家点击地图节点进入事件，悬停选项预览风险，确认后读取“当时的犹豫”和真实存档。视觉上用村落、学校、门、窗和档案室构成路线隐喻。</p>
+  <div class="grid g4">
+    <figure><img src="birthpoint-village/assets/01-education.png" alt="教育节点"><figcaption>01 · 教育节点 / 新手教程缺失</figcaption></figure>
+    <figure><img src="birthpoint-village/assets/03-family-risk.png" alt="家庭风险节点"><figcaption>03 · 家庭风险 / 关系与代价</figcaption></figure>
+    <figure><img src="birthpoint-village/assets/04-shared-map.png" alt="地图共享节点"><figcaption>04 · 共享地图 / 信息差被看见</figcaption></figure>
+    <figure><img src="birthpoint-village/assets/05-window.png" alt="机会窗口节点"><figcaption>05 · 机会窗口 / 短暂可进入</figcaption></figure>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div>
+      <div class="label"><span class="pno">Design 3</span><span class="mono">Playable Archive</span></div>
+      <h2>把个人经验做成可验证的系统</h2>
+      <p class="lede">我把“人生经历”从线性叙事改造成可操作原型：事件不是抒情段落，而是节点；情绪不是旁白，而是玩家做选择前必须读取的限制条件。</p>
+      <div class="archive">
+        <p>项目包含完整前端、交互状态、节点内容、视频播放、风险提示、角色生成与原始档案结算。适合展示我在游戏化叙事、交互产品、AIGC 视觉资产和前端原型上的综合能力。</p>
+        <a class="btn primary" href="birthpoint-village/">进入项目</a>
+      </div>
+    </div>
+    <div class="grid g2">
+      <figure><img src="birthpoint-village/assets/02-safehouse.png" alt="安全屋节点"><figcaption>02 · Safehouse / 支持网络</figcaption></figure>
+      <figure><img src="birthpoint-village/assets/06-organization.png" alt="组织节点"><figcaption>06 · Organization / 能力被调用</figcaption></figure>
+      <figure><img src="birthpoint-village/assets/07-creator.png" alt="创作者节点"><figcaption>07 · Creator / 打开存档</figcaption></figure>
+      <figure><img src="birthpoint-village/assets/04-shared-map.png" alt="共享地图节点"><figcaption>04 · Shared Map / 地图权限</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="label"><span class="pno">Design 4</span><span class="mono">What I Delivered</span></div>
+  <h2>交付内容与能力证明</h2>
+  <p class="lede">这个项目可以被当成一个完整的互动内容产品看：从概念、叙事结构、视觉资产、网页交互到线上部署，均围绕“人生选择如何被系统条件塑形”这个主题服务。</p>
+  <table>
+    <tr><th>模块</th><th>作品中体现的能力</th><th>面试官可查看的证据</th></tr>
+    <tr><td>游戏机制</td><td>把抽象经历拆成节点、变量、风险预览和结算反馈</td><td>地图节点、选项悬停、风险提示、原始存档</td></tr>
+    <tr><td>叙事设计</td><td>用第二人称体验感替代自传式说明，保持克制与可读性</td><td>节点文案、内心片段、档案口吻</td></tr>
+    <tr><td>AIGC 视觉</td><td>统一生成村落、学校、窗口、档案等电影感场景</td><td>7 张核心场景图与 16 段视频片段</td></tr>
+    <tr><td>前端原型</td><td>静态站点完成状态切换、视频叠加、响应式提示与交互反馈</td><td>可直接在 GitHub Pages 打开试玩</td></tr>
+  </table>
+</section>
+
+<footer class="wrap">
+  <div class="mono">End · Life Game Design Casebook</div>
+  <h3>人生不是自由选择题，<br>更像一张逐步解锁的地图。</h3>
+  <div class="actions" style="justify-content:center">
+    <a class="btn primary" href="birthpoint-village/">进入《出生点：村落》</a>
+    <a class="btn" href="index.html">← 回到主页</a>
+  </div>
+</footer>
+
+</body>
+</html>
