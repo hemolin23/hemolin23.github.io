@@ -70,6 +70,14 @@
   .flow div:last-child{border-right:0}
   .flow b{display:block;color:var(--chalk);font-size:14px;margin-bottom:7px}
   .flow span{display:block;color:var(--tape);font-size:12.5px}
+  .tool-stack{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+  .tool{border:1px solid var(--line);background:#0f1210;padding:20px;min-height:184px}
+  .tool b{display:block;color:var(--plate);font-size:15px;margin-bottom:9px}
+  .tool p{font-size:13px;color:#c8c1b7}
+  .prompt-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .prompt-shot{border:1px solid rgba(201,255,54,.36);background:#0d0f0d;padding:8px;user-select:none}
+  .prompt-shot img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;pointer-events:none}
+  .prompt-shot figcaption{font-size:12px;color:var(--tape);padding:9px 4px 2px}
   table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--mat);font-size:13.5px}
   th,td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
   th{color:var(--plate);font-weight:800}
@@ -81,7 +89,7 @@
   .toplink:hover{border-color:var(--plate);color:var(--plate)}
   @media(max-width:900px){
     .cover-grid,.strategy{grid-template-columns:1fr}
-    .film-grid,.matrix,.flow{grid-template-columns:1fr 1fr}
+    .film-grid,.matrix,.flow,.tool-stack,.prompt-wall{grid-template-columns:1fr 1fr}
     .film.wide{grid-column:span 2}
     .flow div:nth-child(2n){border-right:0}
     .flow div{border-bottom:1px solid var(--line)}
@@ -91,7 +99,7 @@
     nav .wrap{height:auto;min-height:56px;align-items:flex-start;padding-top:12px;padding-bottom:12px}
     nav span:last-child{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
     nav a{margin-left:0}
-    .film-grid,.matrix,.flow{grid-template-columns:1fr}
+    .film-grid,.matrix,.flow,.tool-stack,.prompt-wall{grid-template-columns:1fr}
     .film.wide{grid-column:span 1}
     .flow div{border-right:0!important}
     .cover{min-height:86vh}
@@ -181,6 +189,18 @@
     <div><b>AI 视频生成</b><span>按镜头生成训练、城市、动作评估、结算和片头段落。</span></div>
     <div><b>后期合成</b><span>中文 HUD、遮挡转场、节奏拼接、音效、Logo 与片尾主张。</span></div>
     <div><b>发布迭代</b><span>根据 3 秒留存、完播、互动和到店咨询拆分下一轮优化。</span></div>
+  </div>
+  <div class="tool-stack">
+    <div class="tool"><b>ChatGPT / Codex</b><p>用于品牌资料拆解、核心洞察提炼、影片结构、分镜表、画面文案和每条视频的提示词规则。Codex 也用于素材整理、转码、网页搭建和 GitHub 发布。</p></div>
+    <div class="tool"><b>AI 图像生成工具</b><p>用于统一主角、教练、健身房空间、城市氛围和关键首尾帧，先锁定人物身份与场景调性，再进入图生视频。</p></div>
+    <div class="tool"><b>MiniMax H3 / Luma Ray 3.2</b><p>用于生成城市横移、进馆、动作评估、训练挑战、结算界面和片头风格段落。每个镜头控制人物一致性、运动方向和留白区域。</p></div>
+    <div class="tool"><b>Pillow / FFmpeg / 剪辑软件</b><p>用于中文 HUD、品牌 Logo、声音节奏、遮挡转场、视频拼接、压缩预览版和多端网页播放适配。</p></div>
+  </div>
+  <p class="note">以下为关键提示词“截图式节选”，只展示方法，不公开完整可复用版本。</p>
+  <div class="prompt-wall" aria-label="关键提示词截图节选">
+    <figure class="prompt-shot"><img src="assets/brand-case/prompt-shots/prompt-01-brand-film.png" alt="品牌理念片关键提示词截图节选" draggable="false"><figcaption>品牌理念片 · 城市压力与训练空间转场</figcaption></figure>
+    <figure class="prompt-shot"><img src="assets/brand-case/prompt-shots/prompt-02-gamefit.png" alt="游戏化训练关键提示词截图节选" draggable="false"><figcaption>游戏化训练 · 进馆、选择教练与 +5LBS 任务</figcaption></figure>
+    <figure class="prompt-shot"><img src="assets/brand-case/prompt-shots/prompt-03-post-rules.png" alt="动作与后期规则关键提示词截图节选" draggable="false"><figcaption>动作与后期规则 · 中文 HUD 留白与动作真实性</figcaption></figure>
   </div>
 </section>
 
