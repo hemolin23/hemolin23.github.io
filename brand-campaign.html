@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石根洁 | 品牌全案策划作品集</title>
+<meta name="description" content="石根洁品牌全案策划作品集:+5LBS 加伍磅健身品牌理念、视频矩阵、AI 工作流与传播迭代方案。">
+<style>
+  :root{
+    --floor:#080807;
+    --mat:#11110f;
+    --rack:#1b1a17;
+    --chalk:#f4efe6;
+    --tape:#a9a091;
+    --steel:#77766d;
+    --plate:#c9ff36;
+    --line:rgba(244,239,230,.15);
+    --line-strong:rgba(244,239,230,.32);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Songti SC","Noto Serif SC",Georgia,serif;background:var(--floor);color:var(--chalk);line-height:1.78}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .mono{font-family:"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tape)}
+  nav{position:sticky;top:0;z-index:20;background:rgba(8,8,7,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{height:56px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  nav a{font-size:13px;margin-left:20px;color:var(--chalk)}
+  nav a:hover{color:var(--plate)}
+  .cover{position:relative;min-height:92vh;display:grid;align-items:end;border-bottom:1px solid var(--line);overflow:hidden}
+  .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.46;filter:saturate(.92) contrast(1.08)}
+  .cover:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,7,.94) 0%,rgba(8,8,7,.74) 38%,rgba(8,8,7,.22) 100%),linear-gradient(0deg,var(--floor) 0%,rgba(8,8,7,0) 34%)}
+  .cover-inner{position:relative;z-index:1;padding:120px 32px 76px;max-width:1180px;margin:0 auto;width:100%}
+  .kicker{display:inline-flex;gap:12px;align-items:center;border:1px solid var(--line-strong);padding:6px 12px;background:rgba(8,8,7,.46)}
+  h1{font-size:clamp(46px,9vw,118px);font-weight:900;line-height:1.05;letter-spacing:.02em;margin:22px 0 18px;max-width:900px}
+  .cover p{max-width:690px;color:#d6d0c4;font-size:16px}
+  .cover-grid{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;margin-top:54px}
+  .stats{display:flex;gap:36px;flex-wrap:wrap}
+  .stats b{font-size:32px;display:block;line-height:1;color:var(--plate)}
+  .stats span{font-size:12px;color:var(--tape)}
+  .mark{border:1px solid var(--plate);color:var(--plate);padding:12px 16px;font-family:"SF Mono",Menlo,monospace;font-size:14px;letter-spacing:.14em}
+  section{padding:88px 0;border-bottom:1px solid var(--line)}
+  .label{display:flex;gap:14px;align-items:center;margin-bottom:8px}
+  .pno{border:1px solid var(--line-strong);padding:2px 12px;border-radius:999px;font-family:Menlo,monospace;font-size:12px;color:var(--plate)}
+  h2{font-size:34px;line-height:1.25;margin:10px 0 14px}
+  .lede{max-width:820px;color:#c7c0b4;font-size:15.5px;margin-bottom:38px}
+  .strategy{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;align-items:stretch}
+  .brief{background:var(--mat);border:1px solid var(--line);padding:28px}
+  .brief strong{display:block;color:var(--plate);font-size:15px;margin-bottom:8px}
+  .brief p{color:#c8c1b7;font-size:14px}
+  .brief + .brief{background:#0f1210}
+  .film-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .film{background:var(--mat);border:1px solid var(--line);padding:10px}
+  .film.wide{grid-column:span 2}
+  .player{position:relative;background:#050505;overflow:hidden}
+  .player video{display:block;width:100%;background:#050505}
+  .vertical video{max-height:76vh;object-fit:contain}
+  .wide video{aspect-ratio:16/9;object-fit:cover}
+  .seal{position:absolute;top:12px;right:12px;z-index:2;background:rgba(8,8,7,.68);border:1px solid rgba(201,255,54,.44);color:var(--plate);font-family:Menlo,monospace;font-size:10px;letter-spacing:.12em;padding:4px 8px;pointer-events:none}
+  .film-meta{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 4px 3px;align-items:start}
+  .film h3{font-size:20px;line-height:1.35}
+  .film p{font-size:13px;color:var(--tape);max-width:620px}
+  .badge{border:1px solid var(--line-strong);padding:4px 10px;color:var(--tape);font-family:Menlo,monospace;font-size:11px;white-space:nowrap}
+  .matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .matrix div{min-height:168px;border:1px solid var(--line);background:var(--rack);padding:20px}
+  .matrix b{display:block;color:var(--plate);font-size:15px;margin-bottom:9px}
+  .matrix p{font-size:13px;color:#c8c1b7}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);background:var(--mat)}
+  .flow div{padding:18px 16px;min-height:142px;border-right:1px solid var(--line)}
+  .flow div:last-child{border-right:0}
+  .flow b{display:block;color:var(--chalk);font-size:14px;margin-bottom:7px}
+  .flow span{display:block;color:var(--tape);font-size:12.5px}
+  table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--mat);font-size:13.5px}
+  th,td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{color:var(--plate);font-weight:800}
+  td:first-child{color:var(--tape);white-space:nowrap}
+  .note{font-size:12px;color:#8d867a;margin-top:18px}
+  footer{padding:82px 0 110px;text-align:center}
+  footer h2{font-size:clamp(30px,5vw,56px);max-width:820px;margin:16px auto}
+  .toplink{display:inline-flex;border:1px solid var(--line-strong);padding:8px 18px;color:var(--chalk);font-size:13px;margin-top:18px}
+  .toplink:hover{border-color:var(--plate);color:var(--plate)}
+  @media(max-width:900px){
+    .cover-grid,.strategy{grid-template-columns:1fr}
+    .film-grid,.matrix,.flow{grid-template-columns:1fr 1fr}
+    .film.wide{grid-column:span 2}
+    .flow div:nth-child(2n){border-right:0}
+    .flow div{border-bottom:1px solid var(--line)}
+  }
+  @media(max-width:640px){
+    .wrap,.cover-inner{padding-left:20px;padding-right:20px}
+    nav .wrap{height:auto;min-height:56px;align-items:flex-start;padding-top:12px;padding-bottom:12px}
+    nav span:last-child{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+    nav a{margin-left:0}
+    .film-grid,.matrix,.flow{grid-template-columns:1fr}
+    .film.wide{grid-column:span 1}
+    .flow div{border-right:0!important}
+    .cover{min-height:86vh}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="mono">Shi Genjie · Brand Case</span>
+  <span><a href="https://hemolin23.github.io/index.html">← Home</a><a href="director.html">AI Director</a><a href="operations.html">Ops × Growth</a><a href="life-game-design.html">Life Game</a><a href="brand-campaign.html">Brand Case</a></span>
+</div></nav>
+
+<header class="cover" id="top">
+  <video src="assets/brand-case/cyberpunk.mp4" poster="assets/brand-case/posters/cyberpunk.jpg" muted autoplay loop playsinline controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false"></video>
+  <div class="cover-inner">
+    <div class="kicker"><span class="mono">+5LBS / Integrated Brand Campaign</span></div>
+    <h1>品牌全案策划<br>加伍磅健身</h1>
+    <p>围绕“加伍磅”这个名字，把品牌理念、年轻化视觉、游戏化训练和到店转化整合成一组可发布的视频内容矩阵。作品集展示策略判断与成片质量，关键脚本与提示词已做展示级压缩。</p>
+    <div class="cover-grid">
+      <div class="stats">
+        <div><b>4</b><span>完整视频成片</span></div>
+        <div><b>60s</b><span>品牌理念主片</span></div>
+        <div><b>+5LBS</b><span>核心记忆符号</span></div>
+        <div><b>AI→Post</b><span>策划到后期闭环</span></div>
+      </div>
+      <div class="mark">ADD 5 LBS<br>ADD YOURSELF BACK</div>
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="label"><span class="pno">01</span><span class="mono">Strategy Overview</span></div>
+  <h2>从“健身广告”转成“身体时间”的品牌表达</h2>
+  <p class="lede">这套全案没有走身材焦虑、低价促销或教练硬广，而是把加伍磅定位成都市人暂时卸下外部评价、重新建立身体秩序的空间。传播上用两条主线并行：一条偏写实理念，一条偏游戏化体验。</p>
+  <div class="strategy">
+    <div class="brief"><strong>核心洞察</strong><p>现代人缺少的未必是更多目标，而是一段不被消息、效率和评价支配的身体时间。训练不是“变成别人”，而是把注意力加回自己。</p></div>
+    <div class="brief"><strong>品牌符号</strong><p>“+5LBS”被转译成进步单位、任务结算、重量声效和品牌记忆点：每次多一点，不夸张，但能被感知。</p></div>
+    <div class="brief"><strong>受众判断</strong><p>面向 20—40 岁都市健身人群：抗拒身材焦虑式广告，但愿意为专业服务、空间质感和情绪价值买单。</p></div>
+    <div class="brief"><strong>内容策略</strong><p>用短视频矩阵承接不同入口：品牌理念负责记忆，游戏化故事负责年轻化，风格片头负责视觉识别。</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="label"><span class="pno">02</span><span class="mono">Film Matrix</span></div>
+  <h2>四支成片：理念、体验、风格、片头</h2>
+  <p class="lede">视频仅用于网页预览，页面不提供下载按钮；成片文件为压缩展示版。完整策划细节保留在内部文档，不在作品集公开展开。</p>
+  <div class="film-grid">
+    <article class="film vertical">
+      <div class="player"><span class="seal">PREVIEW ONLY</span><video src="assets/brand-case/subtract-world.mp4" poster="assets/brand-case/posters/subtract-world.jpg" controls playsinline controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false"></video></div>
+      <div class="film-meta"><div><h3>《减掉世界，加回自己》</h3><p>写实品牌理念片。以上海都市节奏切入，讲一个人如何停止回应外界，进入训练空间，重新回到呼吸、动作与真实重量。</p></div><span class="badge">Vertical · 59s</span></div>
+    </article>
+    <article class="film vertical">
+      <div class="player"><span class="seal">PREVIEW ONLY</span><video src="assets/brand-case/day-start.mp4" poster="assets/brand-case/posters/day-start.jpg" controls playsinline controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false"></video></div>
+      <div class="film-meta"><div><h3>《在加伍磅的一天》</h3><p>游戏化健身体验片。把进馆、签到、选择教练、动作评估、训练挑战和结果结算设计成一次角色成长任务。</p></div><span class="badge">Vertical · 60s</span></div>
+    </article>
+    <article class="film wide">
+      <div class="player"><span class="seal">PREVIEW ONLY</span><video src="assets/brand-case/cyberpunk.mp4" poster="assets/brand-case/posters/cyberpunk.jpg" controls playsinline controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false"></video></div>
+      <div class="film-meta"><div><h3>赛博朋克风格片</h3><p>将“训练任务”“城市压力”“角色升级”做成更强视觉风格版本，用于测试年轻人群对潮流化健身叙事的接受度。</p></div><span class="badge">16:9 · 47s</span></div>
+    </article>
+    <article class="film wide">
+      <div class="player"><span class="seal">PREVIEW ONLY</span><video src="assets/brand-case/comic-opening.mp4" poster="assets/brand-case/posters/comic-opening.jpg" controls playsinline controlsList="nodownload noplaybackrate" disablePictureInPicture oncontextmenu="return false"></video></div>
+      <div class="film-meta"><div><h3>漫画片头</h3><p>用于品牌内容矩阵的识别开场，把教练、任务和训练状态压缩成高记忆度的视觉入口。</p></div><span class="badge">16:9 · 6s</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="label"><span class="pno">03</span><span class="mono">Campaign System</span></div>
+  <h2>一套全案，不是一条孤立视频</h2>
+  <p class="lede">这组作品从品牌问题出发，而不是从“生成一条好看的视频”出发。核心交付包含定位、创意概念、成片矩阵、AI 生产方式、数据预估和迭代路线。</p>
+  <div class="matrix">
+    <div><b>品牌定位</b><p>从“器械重量”延展到“面对生活的稳定感”，让 +5LBS 具备情绪和行动双重含义。</p></div>
+    <div><b>创意概念</b><p>写实理念片解决品牌气质；游戏化影片解决年轻化和互动感；风格片测试视觉入口。</p></div>
+    <div><b>内容资产</b><p>形成主片、短开场、风格变体、角色/教练视觉资产，便于后续持续拆条投放。</p></div>
+    <div><b>转化预案</b><p>理念片之外补 15 秒转化版，明确门店位置、服务权益、预约路径和体验课信息。</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="label"><span class="pno">04</span><span class="mono">AI Production Workflow</span></div>
+  <h2>从策略文本到可发布视频的 AI 工作流</h2>
+  <p class="lede">我的工作不是只生成画面，而是把品牌策略拆成可执行生产线：先确定叙事结构和视觉规则，再用 AI 生成关键帧与视频，最后通过后期保证中文、节奏、声音和品牌露出准确。</p>
+  <div class="flow">
+    <div><b>策略与脚本</b><span>品牌资料梳理、核心洞察、60 秒结构、画面文案和声音逻辑。</span></div>
+    <div><b>角色与关键帧</b><span>统一人物身份、空间气质、教练角色和训练动作视觉规则。</span></div>
+    <div><b>AI 视频生成</b><span>按镜头生成训练、城市、动作评估、结算和片头段落。</span></div>
+    <div><b>后期合成</b><span>中文 HUD、遮挡转场、节奏拼接、音效、Logo 与片尾主张。</span></div>
+    <div><b>发布迭代</b><span>根据 3 秒留存、完播、互动和到店咨询拆分下一轮优化。</span></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="label"><span class="pno">05</span><span class="mono">Data & Iteration</span></div>
+  <h2>上线后看什么，怎么改</h2>
+  <p class="lede">数据预估不作为效果承诺，而是用于判断内容上线后的第一轮优化方向。先看留存，再看品牌记忆，最后补具体转化。</p>
+  <table>
+    <tr><th>目标</th><th>首周观察区间</th><th>如果不足，优先调整</th></tr>
+    <tr><td>曝光</td><td>2万—15万，取决于账号基础与投放</td><td>封面、标题、开头 3 秒冲突</td></tr>
+    <tr><td>互动</td><td>3.5%—7%</td><td>片尾增加问题，例如“你最想删除生活里的哪种声音？”</td></tr>
+    <tr><td>完播</td><td>18%—28% 作为理念片参考</td><td>压缩为 30—45 秒版本，每 5 秒出现一次视觉变化</td></tr>
+    <tr><td>转化</td><td>主页访问 / 咨询 / 到店预约分层追踪</td><td>补门店位置、服务权益、新人体验和预约入口</td></tr>
+  </table>
+  <p class="note">页面已禁用视频右键菜单、画中画和浏览器下载按钮；公开网页仍无法从技术上绝对阻止所有抓取，作品保护以“不提供下载入口 + 压缩预览版 + 不公开完整执行文档”为原则。</p>
+</section>
+
+<footer class="wrap">
+  <div class="mono">End · +5LBS Brand Campaign Case</div>
+  <h2>增加的，不一定是负担。<br>也可以是面对生活的力量。</h2>
+  <a class="toplink" href="#top">Back to Top</a>
+</footer>
+
+<script>
+  document.addEventListener("contextmenu", function(event){
+    if(event.target.closest("video")) event.preventDefault();
+  });
+  document.querySelectorAll("video").forEach(function(video){
+    video.setAttribute("controlsList", "nodownload noplaybackrate");
+    video.setAttribute("disablePictureInPicture", "");
+    video.setAttribute("draggable", "false");
+  });
+</script>
+
+</body>
+</html>
